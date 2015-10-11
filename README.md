@@ -38,7 +38,7 @@ Them link to cakephp container
 
     $ docker run -d -p 80 --link some-mysql:db quantumobject/docker-cakephp
 
-where when been ask for database need to replace localhost for db.
+when docker cakephp running  for the  mysql database need to edit file /var/www/config/app.php replace localhost for db and used your dabase name, user name , and password to be able to used it. I maybe write a script to be execute at server where docker container is running to entry database conf.
 
 ## Accessing the cakephp applications:
 
