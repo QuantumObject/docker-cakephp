@@ -8,7 +8,7 @@ Docker container for [CakePHP][3]
 
   - [Docker][2]
 
-To install docker in Ubuntu 14.04 use the commands:
+To install docker in Ubuntu 15.04 use the commands:
 
     $ sudo apt-get update
     $ wget -qO- https://get.docker.com/ | sh
@@ -64,9 +64,11 @@ About CakePHP: [cakephp.org/pages/documentation][1]
 
 To help improve this container [docker-cakephp][5]
 
+For additional info about us and our projects check our site [www.quantumobject.com][6]
 
 [1]:http://cakephp.org/pages/documentation
 [2]:https://www.docker.com
 [3]:https://github.com/cakephp/cakephp/tags
 [4]:http://docs.docker.com
 [5]:https://github.com/QuantumObject/docker-cakephp
+[6]:http://www.quantumobject.com/
