@@ -2,7 +2,7 @@
 set -e
 
  cd /var/www
- curl -o cakephp.zip -SL "https://github.com/cakephp/cakephp/releases/download/3.1.3/cakephp-3-1-3.zip"
+ curl -o cakephp.zip -SL "https://github.com/cakephp/cakephp/releases/download/3.2.7/cakephp-3-2-7.zip"
  unzip cakephp.zip
  rm cakephp.zip
  
