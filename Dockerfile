@@ -1,5 +1,5 @@
 #name of container: docker-cakephp
-#versison of container: 0.1.2
+#versison of container: 0.2.1
 FROM quantumobject/docker-baseimage:15.10
 MAINTAINER Angel Rodriguez  "angelrr7702@gmail.com"
 
@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y -q php5 \
                     php5-json \
                     php5-curl \
                     php5-intl \
+                    php5-sqlite \
                     unzip \
                     && apt-get clean \
                     && rm -rf /tmp/* /var/tmp/*  \
@@ -21,10 +22,8 @@ RUN apt-get update && apt-get install -y -q php5 \
 
 # to add apache2 deamon to runit
 RUN mkdir -p /etc/service/apache2  /var/log/apache2 ; sync 
-RUN mkdir /etc/service/apache2/log
 COPY apache2.sh /etc/service/apache2/run
-COPY apache2-log.sh /etc/service/apache2/log/run
-RUN chmod +x /etc/service/apache2/run /etc/service/apache2/log/run \
+RUN chmod +x /etc/service/apache2/run \
     && cp /var/log/cron/config /var/log/apache2/ \
     && chown -R www-data /var/log/apache2
 
