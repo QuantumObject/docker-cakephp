@@ -1,20 +1,20 @@
 #name of container: docker-cakephp
-#versison of container: 0.2.1
-FROM quantumobject/docker-baseimage:15.10
+#versison of container: 0.3.1
+FROM quantumobject/docker-baseimage:16.04
 MAINTAINER Angel Rodriguez  "angelrr7702@gmail.com"
 
 #add repository and update the container
 #Installation of nesesary package/software for this containers...
-RUN echo "deb http://archive.ubuntu.com/ubuntu `cat /etc/container_environment/DISTRIB_CODENAME`-backports main restricted " >> /etc/apt/sources.list
-RUN apt-get update && apt-get install -y -q php5 \
-                    libapache2-mod-php5 \
-                    php5-gd \
+RUN apt-get update && apt-get install -y -q php7.0 \
+                    libapache2-mod-php7.0 \
+                    php7.0-gd \
                     apache2 \
-                    php5-mysql \
-                    php5-json \
-                    php5-curl \
-                    php5-intl \
-                    php5-sqlite \
+                    php7.0-mysql \
+                    php7.0-json \
+                    php7.0-curl \
+                    php7.0-intl \
+                    php7.0-sqlite3 \
+                    php7.0-mbstring \
                     unzip \
                     && apt-get clean \
                     && rm -rf /tmp/* /var/tmp/*  \
