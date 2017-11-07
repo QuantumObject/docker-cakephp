@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y -q php7.0 \
                     php7.0-curl \
                     php7.0-intl \
                     php7.0-sqlite3 \
+                    php7.0-mbstring \
                     unzip \
                     && apt-get clean \
                     && rm -rf /tmp/* /var/tmp/*  \
