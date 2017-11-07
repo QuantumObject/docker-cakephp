@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y -q php7.0 \
                     php7.0-json \
                     php7.0-curl \
                     php7.0-intl \
-                    php7.0-sqlite \
+                    php7.0-sqlite3 \
                     unzip \
                     && apt-get clean \
                     && rm -rf /tmp/* /var/tmp/*  \
