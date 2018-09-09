@@ -1,11 +1,11 @@
 #name of container: docker-cakephp
 #versison of container: 0.3.2
 FROM quantumobject/docker-baseimage:18.04
-MAINTAINER Angel Rodriguez  "angelrr7702@gmail.com"
+MAINTAINER Angel Rodriguez  "angel@quantumobject.com"
 
 #add repository and update the container
 #Installation of nesesary package/software for this containers...
-RUN apt-get update && apt-get install -y -q php \
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -q php \
                     libapache2-mod-php \
                     php-gd \
                     apache2 \
