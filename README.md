@@ -30,7 +30,9 @@ Where xxxxx is the port assigned by you for the container if not docker will ass
 ## If you need a MySQL database you can link container :
 
     $ docker run --name cakephp-mysql -e MYSQL_ROOT_PASSWORD=mysecretpassword  -e MYSQL_DATABASE=cakephp \
-    -e MYSQL_USER=cakephpuser -e MYSQL_PASSWORD=cakephpdbpasswd -d mysql
+    -e MYSQL_USER=cakephpuser -e MYSQL_PASSWORD=cakephpdbpasswd -d mysql:5.7
+    
+note: used old stable version of mysql 5.7 . It will fail with newer version.
 
 in case you want to used pre-existing mysql container , you can add the new database by connecting to it with _docker exec -it some-mysql bash_ and manual adding cakephp database or you can link and used quantumobject/docker-mywebsql to create database cakephp and user cakephpuser plus need to grant all permision of this user to the cakephp database.  
   
