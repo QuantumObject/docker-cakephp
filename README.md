@@ -19,11 +19,7 @@ To install docker in Ubuntu 18.04 use the commands:
 
 To run container use the command below:
 
-    $ docker run -d -p 80 quantumobject/docker-cakephp
-
-or
-
-    $ docker run -d -p xxxxx:80 quantumobject/docker-cakephp
+    $ docker run -d -p 80:80 quantumobject/docker-cakephp
 
 Where xxxxx is the port assigned by you for the container if not docker will assigned one for it.
 
