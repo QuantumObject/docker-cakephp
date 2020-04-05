@@ -19,7 +19,7 @@ To install docker in Ubuntu 18.04 use the commands:
 
 To run container use the command below:
 
-    $ docker run -d -p 80:80 quantumobject/docker-cakephp
+    $ docker run -d -p 80:80 --name cakephp quantumobject/docker-cakephp
 
 Where xxxxx is the port assigned by you for the container if not docker will assigned one for it.
 
@@ -27,13 +27,15 @@ Where xxxxx is the port assigned by you for the container if not docker will ass
 
     $ docker run --name cakephp-mysql -e MYSQL_RANDOM_ROOT_PASSWORD=yes -e MYSQL_DATABASE=cakephp -e MYSQL_USER=cakephpuser -e MYSQL_PASSWORD=cakephpdbpasswd -d mysql:5.7
     
-note: to used newest version of mysql need to run : "docker run --name cakephp-mysql -e MYSQL_RANDOM_ROOT_PASSWORD=yes -e MYSQL_DATABASE=cakephp -e MYSQL_USER=cakephpuser -e MYSQL_PASSWORD=cakephpdbpasswd -d mysql --default-authentication-plugin=mysql_native_password " to make it work .... 
+note: to used newest version of mysql/mariadb need to run : 
+
+    $ docker run --name cakephp-mysql -e MYSQL_RANDOM_ROOT_PASSWORD=yes -e MYSQL_DATABASE=cakephp -e MYSQL_USER=cakephpuser -e MYSQL_PASSWORD=cakephpdbpasswd -d mysql --default-authentication-plugin=mysql_native_password
 
 in case you want to used pre-existing mysql container , you can add the new database by connecting to it with _docker exec -it some-mysql bash_ and manual adding cakephp database or you can link and used quantumobject/docker-mywebsql to create database cakephp and user cakephpuser plus need to grant all permision of this user to the cakephp database.  
   
 Them link to cakephp container
 
-    $ docker run -d -p 80:80 --link cakephp-mysql:db quantumobject/docker-cakephp
+    $ docker run -d -p 80:80 --link cakephp-mysql:db --name cakephp quantumobject/docker-cakephp
 
 when docker cakephp running  for the  mysql database need to edit file /var/www/config/app.php replace localhost for db and used your dabase name, user name , and password to be able to used it. 
 
